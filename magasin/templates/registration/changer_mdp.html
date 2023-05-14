@@ -1,0 +1,16 @@
+{% extends "magasin/base.html" %}
+
+{% block content %}
+  <h2>Réinitialisation du mot de passe </h2>
+  <p>vous avez oublié votre mot de passe ?</p>
+  <form method="post">
+    {% csrf_token %}
+    {% if form.email.errors %}
+      {% for error in form.email.errors %}
+        <p class="alert alert-danger">{{ error }}</p>
+      {% endfor %}
+    {% endif %}
+    <p>{{ form.email.label_tag }} {{ form.email }}</p>
+    <button type="submit">M'envoyer les instructions</button>
+  </form>
+{% endblock %}

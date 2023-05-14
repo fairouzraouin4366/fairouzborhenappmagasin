@@ -1,0 +1,27 @@
+{% extends 'magasin/base.html' %}
+{% block title %} Categories {% endblock %}
+{% block content %}
+<!-- body -->
+<div class="container-fluid mt-3">
+    <div class="row-9" >
+        <!-- all products -->
+        <div  id='categorie' class="col-lg-9 mx-auto" >
+            <div class="row mx-auto" >
+                {% for categorie in categories %}
+                <div class="card" id={{categorie.id}} style="width:350px;border:black solid 1px;margin:5px;">
+                    
+                    <div class="card-body" >
+                        
+                         <p class="card-text">Nom: <b>{{categorie.name}}</b></p>
+                        <div style="width: 350px;">
+             
+                        </div>
+                </div>
+                </div>
+         
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

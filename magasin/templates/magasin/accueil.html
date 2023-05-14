@@ -1,0 +1,68 @@
+{% extends 'magasin/base.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Welcome Page</title>
+	<style>
+		body {
+			background-color: #f2f2f2;
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+		}
+		
+		.container {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			height: 100vh;
+			width: 100%;
+		}
+		
+		h1 {
+			font-size: 48px;
+			color: #333;
+			margin-bottom: 20px;
+		}
+		
+		p {
+			font-size: 24px;
+			color: #666;
+			margin-bottom: 40px;
+		}
+		
+		button {
+			background-color: #008CBA;
+			color: white;
+			border: none;
+			padding: 15px 32px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 16px;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+		
+		button:hover {
+			background-color: #006080;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+        
+        {% if user.is_authenticated %}
+		<h1>bienvenue {{user}},</h1>
+        {% else %}
+        <h1>bienvenue cher visiteur</h1>
+        {% endif %}
+		<p>Merci pour visiter notre site E-commerce</p>
+        <p>Appuyer ci-desous pour voir nos produits</p>
+		<a href="{% url 'Catalogue'%}"><button>Catalogue</button></a>
+	</div>
+    </body>
+</html>
+{% endblock %}
